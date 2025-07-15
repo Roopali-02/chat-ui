@@ -37,3 +37,6 @@ https://chat-ui-inky-one.vercel.app/
 - Copy to Clipboard: Hover on a text message shows a copy button.
 - Dark Mode: UI adapts based on dark/light mode toggle.
 - Toast Notifications: Shown for actions like OTP sent, message copied.
+
+## Important Note
+- The country codes are fetched from the `restcountries.com` API. In case the API fails (due to rate limits or network issues), a fallback list of major countries (India, US, UK) is used to ensure the login form remains functional.
