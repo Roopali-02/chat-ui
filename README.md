@@ -1,12 +1,39 @@
-# React + Vite
+## 🚀 Project Overview
+This is a conversational AI frontend built using React, Zustand, Tailwind CSS, and React Hook Form + Zod. It simulates OTP login, chatroom management, AI messaging, image uploads, dark mode, and responsive UI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Link
+https://chat-ui-inky-one.vercel.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup & run Installations
+1. Clone the repository:
+```bash
+   git clone https://github.com/Roopali-02/chat-ui.git
+```
+2. Navigate into the project directory:
+```bash
+    cd chat-ui
+```
+3. Install dependencies:
+```bash
+    npm install
+```
+4. Start the development server:
+```bash
+    npm run dev
+```
 
-## Expanding the ESLint configuration
+## Folder/component structure explanation
+- `pages/`: Top-level route pages including Login, Dashboard, and ChatRoom.
+- `store/`: Zustand store for managing auth state, chatrooms, and messages.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How throttling, pagination, infinite scroll, and form validation are implemented
+- Form Validation: Handled using React Hook Form + Zod on the login screen. Validates country code and phone number.
+- Throttling: Search input in dashboard is throttled using lodash.debounce (300ms delay).
+- Infinite Scroll: Older messages load when you scroll to the top in the chat screen (reverse infinite scroll). 
+- Simulated AI Messaging: Gemini replies with delay using setTimeout, with typing indicator.
+- OTP Simulation: OTP send/verify is faked using setTimeout and basic input checks.
+- Image Upload: Messages support image preview using base64 via FileReader.
+- Copy to Clipboard: Hover on a text message shows a copy button.
+- Dark Mode: UI adapts based on dark/light mode toggle.
+- Toast Notifications: Shown for actions like OTP sent, message copied.
