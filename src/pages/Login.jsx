@@ -20,6 +20,11 @@ const Login = () => {
 	});
 	const [error, setError] = useState(false);
 	const [loading, setLoading] = useState(true);
+	const fallbackCountries = [
+  { name: "India", code: "+91", flag: "" },
+  { name: "United States", code: "+1", flag: "" },
+  { name: "United Kingdom", code: "+44", flag: "" },
+];
 
 	useEffect(() => {
 		const fetchCountries = async () => {
@@ -42,6 +47,7 @@ const Login = () => {
 				setError(false);
 			} catch (err) {
 				console.error("Failed to load countries:", err.message);
+				setCountries(fallbackCountries);
 				setError(true);
 			}finally {
 			setLoading(false);
