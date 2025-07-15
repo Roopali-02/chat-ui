@@ -11,7 +11,7 @@ const Chatroom = () => {
 	const messageList = useMemo(() => messages[id] || [], [messages, id]);
 	const [input, setInput] = useState("");
 	const [isTyping, setIsTyping] = useState(false);
-	const [setImageFile] = useState(null);
+	const [imageFile,setImageFile] = useState(null);
 	const [imagePreview, setImagePreview] = useState(null);
 	const containerRef = useRef(null);
 	const [loadingMore, setLoadingMore] = useState(false);
@@ -23,7 +23,9 @@ useEffect(() => {
 	const onUserScroll = () => setHasScrolled(true);
 	el?.addEventListener("scroll", onUserScroll);
 	return () => el?.removeEventListener("scroll", onUserScroll);
-}, []);
+  }, []);
+
+	console.log(imageFile);
 
 	useEffect(() => {
 		bottomRef.current?.scrollIntoView({ behavior: "smooth" });
